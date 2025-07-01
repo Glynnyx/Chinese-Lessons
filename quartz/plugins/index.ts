@@ -54,3 +54,7 @@ declare module "vfile" {
     relativePath: FilePath
   }
 }
+
+export function Slug(arg0: { lowercase: boolean }): import("./types").QuartzTransformerPluginInstance {
+  throw new Error("Function not implemented.")
+}

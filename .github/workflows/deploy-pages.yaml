@@ -1,0 +1,47 @@
+name: Deploy Quartz Site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - v4 # Or 'v4' if that's your primary branch for notes
+  workflow_dispatch: # Allows you to manually trigger the workflow
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history for Quartz features like backlinks
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22 # Use a stable Node.js version compatible with Quartz
+
+      - name: Install dependencies
+        run: npm install # Installs Quartz and its dependencies
+
+      - name: Build Quartz site
+        run: npx quartz build # Builds your Obsidian notes into a static site
+        # Quartz typically outputs to a 'public' directory by default
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3 # Or v4, GitHub usually suggests the latest
+        with:
+          path: './public' # This is the directory where Quartz puts the built website files
+
+  deploy:
+    needs: build # This job depends on the 'build' job completing successfully
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write      # Required to deploy to GitHub Pages
+      id-token: write   # Required to authenticate with OIDC
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # Or v3, GitHub usually suggests the latest

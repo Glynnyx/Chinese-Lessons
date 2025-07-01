@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "https://glynnyx.github.io/Chinese-Lessons",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
@@ -72,6 +72,8 @@ const config: QuartzConfig = {
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
+      // Plugin.Slug({ lowercase: true }), // Add or ensure this is present and true
+
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
@@ -82,7 +84,7 @@ const config: QuartzConfig = {
       Plugin.TagPage(),
       Plugin.ContentIndex({
         enableSiteMap: true,
-        enableRSS: true,
+        enableRSS: false,
       }),
       Plugin.Assets(),
       Plugin.Static(),
