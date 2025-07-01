@@ -72,7 +72,7 @@ const config: QuartzConfig = {
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
-      Plugin.Slug({ lowercase: true }), // Add or ensure this is present and true
+      // Plugin.Slug({ lowercase: true }), // Add or ensure this is present and true
 
     ],
     filters: [Plugin.RemoveDrafts()],
