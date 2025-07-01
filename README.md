@@ -1,6 +1,8 @@
-# Quartz v4
+# What is this?
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+>This is a repository for my Chinese Learning taking my lessons from my teacher and publishing them for the world to use, if you want. These notes include all the words I've learned and more. I hope to keep expanding on this and adding more words, conversations and more. 
+
+This was built using Quartz/Obsidian and a lot of Google Gemini. I'm not a developer but if you'd like to help contribute contact me on Discord @Glynny
 
 Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
 Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
