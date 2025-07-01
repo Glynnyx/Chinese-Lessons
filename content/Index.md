@@ -1,6 +1,6 @@
 # Welcome to my Chinese Learning Notes!
 
-This is my home page for my Chinese language lessons. This website will be underdevelopment for a long time and I will update it when I can. If you would like to contribute to the website, please contact me on Discord @Glynny
+This is my home page for my Chinese language lessons. This website will be under development for a long time and I will update it when I can. If you would like to contribute to the website, please contact me on Discord @Glynny
 
 Please use this navigation on the left side to start.
 
