@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0 # Fetch all history for Quartz features like backlinks
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22 # Use a stable Node.js version compatible with Quartz
 
@@ -28,7 +28,7 @@ jobs:
         # Quartz typically outputs to a 'public' directory by default
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3 # Or v4, GitHub usually suggests the latest
+        uses: actions/upload-pages-artifact@v4 # Or v4, GitHub usually suggests the latest
         with:
           path: './public' # This is the directory where Quartz puts the built website files
 
